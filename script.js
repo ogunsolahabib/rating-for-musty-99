@@ -31,6 +31,10 @@
 //     document.querySelector('#submit').classList.add('active');
 // })
 
+let isSubmitActive=false;
+
+
+
 
 function activateItem(number) {
 
@@ -48,12 +52,31 @@ function activateItem(number) {
     document.querySelector('.active')?.classList.remove('active');
 
 
-
-
     // change the color by adding the active class
     ratingItem.classList.add('active');
 
     // change color of submit button
     document.querySelector('#submit').classList.add('active');
+    document.querySelector('#submit').disabled = false;
 
+    isSubmitActive=true;
+
+    document.querySelector(".selection").textContent = number;
+
+
+
+
+}
+
+function handleSubmitClick(){
+    // check if submit button is active
+    if(isSubmitActive){
+         // 1. hide ratings selection
+    document.querySelector('.ratings-wrapper').style.display = "none";
+
+    // 2. show thank you
+    document.querySelector('.success').style.display = "flex"
+    }
+   
+   
 }
