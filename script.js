@@ -31,10 +31,10 @@
 //     document.querySelector('#submit').classList.add('active');
 // })
 
+
 function activateItem(number) {
 
     const ratingItem = document.querySelector('.rating-item--' + number);
-    console.log("ratingItem", ratingItem);
 
 
     // // check current active item and remove active class
@@ -45,10 +45,8 @@ function activateItem(number) {
 
     // }
     // New way of doing it
-    const activeElement = document.querySelector('.active');
-    if (activeElement) {
-        activeElement.classList.remove('active');
-    }
+    document.querySelector('.active')?.classList.remove('active');
+
 
 
 
